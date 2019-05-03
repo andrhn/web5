@@ -1,0 +1,12 @@
+body {
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 50px;
+	height: 650px;
+	background: linear-gradient(to bottom, #12161c, #141b22, #162129, #18272e, #192d34);
+	font-family: "Century Gothic", sans-serif;
+}
+
+.light {
+	color: white;
+}
