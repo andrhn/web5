@@ -1,28 +1,37 @@
 <template>
 <div id="app">
-  <div class = "contaier">
+  <div class = "container">
     <div class="row mt-4">
-     <div class = "col-md-6">
-        <h4 class = "light">Markdown</h4>
-        <textarea class ="info"
-            v-model = 'md_text'></textarea>
-     </div>
 
-     <div class = "col-md-6">
-        <h4 class = "light">Preview</h4>
-        <div class = "info" v-html='previewText'></div>
-     </div>
-  </div>
-
-  </div>
+        <div class = "col-md-6">
+        <form>
+        <div class="form-group">
+        <input class="form-control" type="text" name="title" id="title" placeholder="Title" v-model.trim="post.title"/>
+        </div>
+        <div class="form-group">
+        <textarea class="form-control" type="text" rows="5" name="description" id="description" placeholder="Description" v-model.trim="post.description" v-model = 'md_text'>
+        </textarea>
+        </div>
+        <div class="form-group">
+        <button class="btn btn-block btn-primary" type="button" name="addPost" id="addPost" @click="addPost()">add new post</button>
+      </div>
+        </form>
 </div>
+        <div class = "col-md-6">
+                <h4 class = "light">Preview</h4>
+                <div class = "info" v-html='previewText'></div>
+             </div>
+          <section>
+              <button class="btn btn-success btn-block" type="button" @click="goBack()">go to posts page</button>
+          </section>
+    </div>
+</div>
+</div>
+
 </template>
 
-
-
-
-
 <script>
+import PostsService from '@/services/PostsService'
 let marked = require('marked');
 export default {
   name: "NewPostPage",
@@ -57,7 +66,9 @@ export default {
           title: this.post.title,
           description: this.post.description
         });
+
         this.$router.push({ name: "Posts" });
+
       } else {
         alert("Empty fields!");
       }

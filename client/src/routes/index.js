@@ -1,6 +1,7 @@
 import Hello from '@/components/HelloWorld'
 import Posts from '@/components/pages/PostsPage'
 import NewPost from '@/components/pages/NewPostPage'
+import EditPost from '@/components/pages/EditPostPage'
 const routes = [
   {path: '/',
   name: 'Hello',
@@ -16,6 +17,11 @@ const routes = [
   name: 'NewPost',
   component: NewPost
 },
+  {
+    path: '/posts/:id',
+    name: 'EditPost',
+    component: EditPost
+  }
 
 ]
 export default routes

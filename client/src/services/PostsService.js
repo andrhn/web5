@@ -9,4 +9,10 @@ export default {
     getPost (params) {
     return api().get(`posts/${params.id}`)
   },
+   updatePost (params) {
+    return api().put(`posts/${params.id}`, params)
+  },
+  deletePost (id) {
+    return api().delete(`posts/${id}`)
+  }
 }
