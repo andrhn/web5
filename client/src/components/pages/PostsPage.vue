@@ -1,17 +1,17 @@
 <template lang="pug">
   .container
     .row
-      .col-xs-12
+      .col-md-3
+      .center-block
         h1
           | Posts
-        h3
-          | This file will list all the posts
+        
         a.btn.btn-block.btn-primary(href="/posts/new") add new post
         // router-link( :to="{ name: 'NewPost' }" )
         //       | add new post
         section.panel.panel-success(v-if="posts.length")
           .panel-heading
-            | list of posts
+
           table.table.table-striped
             tr
               th Title

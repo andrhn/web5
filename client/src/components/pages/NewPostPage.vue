@@ -1,6 +1,7 @@
 <template>
 <div id="app">
   <div class = "container">
+  <h4 style="text-align: center">Edit post</h4>
     <div class="row mt-4">
 
         <div class = "col-md-6">
@@ -18,16 +19,17 @@
         </form>
 </div>
         <div class = "col-md-6">
-                <h4 class = "light">Preview</h4>
-                <div class = "info" v-html='previewText'></div>
+                <h6>md preview</h6>
+                <div class = "form-group" v-html='previewText'></div>
              </div>
+
+
           <section>
               <button class="btn btn-success btn-block" type="button" @click="goBack()">go to posts page</button>
           </section>
+</div>
+</div>
     </div>
-</div>
-</div>
-
 </template>
 
 <script>
@@ -79,3 +81,4 @@ export default {
   }
 };
 </script>
+
